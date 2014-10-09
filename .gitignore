@@ -1,0 +1,6 @@
+# Ignoring API keys
+keys.inc
+
+
+# Todo list
+*.txt

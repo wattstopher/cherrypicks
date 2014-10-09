@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Computers & Tablets",
+    "id": "abcat0500000"
+  },
+  {
+    "name": "2-in-1s",
+    "id": "pcmcat309300050015"
+  },
+  {
+    "name": "Desktops", 
+    "id": "pcmat143400050013"
+  },
+  {
+    "name": "Laptops - PC Laptops",
+    "id": "pcmcat247400050000"
+  },
+  {
+    "name": "Laptops - MacBooks", 
+    "id": "pcmcat24740005000"
+  },
+  {
+    "name": "Laptops - Chromebooks",
+    "id": "pcmcat244900050010"
+  },
+  {
+    "name": "Laptpos - 2-in-1s", 
+    "id": "pcmcat309300050015"
+  },
+  {
+    "name": "Laptops - Ultrabooks", 
+    "id": "pcmcat25940005000"
+  },
+  {
+    "name": "Laptops - Netbooks", 
+    "id": "pcmcat163300050051"
+  },
+  {
+    "name": "Laptops - Gaming Laptops",
+    "id": "pcmcat287600050003"
+  },
+  {
+    "name": "Laptops - Refurbished Laptops",
+    "id": "pcmcat219300050014"
+  },
+  {
+    "name": "Desktops - Towers", 
+    "id": "pcmcat212600050008"
+  },
+  {
+    "name": "Tablets", 
+    "id": "pcmcat209000050008"
+  },
+  {
+    "name": "Tablets - iPads", 
+    "id": "pcmcat209000050007"
+  },
+  {
+    "name": "Tablets - E-Readers", 
+    "id": "pcmcat193100050014"
+  },
+  {
+    "name": "Desktops - Desktop Packages",
+    "id": "pcmcat212600050011"
+  },
+  {
+    "name": "Desktops - All-In-One Computers", 
+    "id": "pcmcat200200050000"
+  },
+  {
+    "name": "Desktops - Apple iMacs, Minis & Mac Pros", 
+    "id": "pcmcat268200050003"
+  },
+  {
+    "name": "Desktops - Gaming Desktops", 
+    "id": "pcmcat287600050002"
+  },
+  {
+    "name": "Desktops - Refurbished Desktops", 
+    "id": "pcmcat212600050009"
+  },
+  {
+    "name": "TVs",
+    "id": "abcat0101000"
+  },
+  {
+    "name": "Projectors and Screens",
+    "id": "pcmcat158900050008"
+  },
+  {
+    "name": "Blu-ray & DVD Players",
+    "id": "abcat0102000"
+  },
+  {
+    "name": "Streaming Media Players",
+    "id": "pcmcat161100050040"
+  },
+  {
+    "name": "Home Theater Systems",
+    "id": "abcat0203000"
+  },
+  {
+    "name": "Cell Phones - Verizon Wireless",
+    "id": "pcmcat208100050003"
+  },
+  {
+    "name": "Cell Phones - Sprint",
+    "id": "pcmcat208100050001"
+  },
+  {
+    "name": "Cell Phones - AT&T",
+    "id": "pcmcat208100050002"
+  },
+  {
+    "name": "Cell Phones T-Mobile",
+    "id": "pcmcat208100050004"
+  },
+  {
+    "name": "Cell Phones - No-Contract",
+    "id": "abcat0801002"
+  },
+  {
+    "name": "Cell Phones - Unlocked",
+    "id": "pcmcat156400050037"
+  },
+  {
+    "name": "Cameras - Digital Cameras",
+    "id": "abcat0401000"
+  },
+  {
+    "name": "Cameras - Digital SLR Cameras",
+    "id": "abcat0401005"
+  },
+  {
+    "name": "Cameras - Compact System Cameras",
+    "id": "pcmcat214000050005"
+  },
+  {
+    "name": "Cameras - Point & Shoot Cameras",
+    "id": "abcat0401001"
+  },
+  {
+    "name": "Cameras - Camcorders",
+    "id": "abcat0403000"
+  }
+]
