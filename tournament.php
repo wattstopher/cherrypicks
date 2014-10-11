@@ -27,8 +27,8 @@
 	}
 
 	function getProds($elements){
-		$prodOne_url = "http://api.remix.bestbuy.com/v1/products(sku={$elements[0]})?show=name,salePrice,manufacturer,largeImage,customerReviewAverage,modelNumber,longDescriptionHtml&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
-		$prodTwo_url = "http://api.remix.bestbuy.com/v1/products(sku={$elements[1]})?show=name,salePrice,manufacturer,largeImage,customerReviewAverage,modelNumber,longDescriptionHtml&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
+		$prodOne_url = "http://api.remix.bestbuy.com/v1/products(sku={$elements[0]})?show=name,sku,salePrice,manufacturer,largeImage,customerReviewAverage,modelNumber,longDescriptionHtml&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
+		$prodTwo_url = "http://api.remix.bestbuy.com/v1/products(sku={$elements[1]})?show=name,sku,salePrice,manufacturer,largeImage,customerReviewAverage,modelNumber,longDescriptionHtml&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
 		$prodOne_json = file_get_contents($prodOne_url);
 		$prodTwo_json = file_get_contents($prodTwo_url);
 		$prodOne = json_decode($prodOne_json);

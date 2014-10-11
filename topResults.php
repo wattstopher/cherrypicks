@@ -15,12 +15,15 @@
          include 'knockout.php';
 
          $winner_skus = unserialize(urldecode(htmlspecialchars($_POST['top'])));
+         $winner = htmlspecialchars($_POST['winner']);
+         $second = htmlspecialchars($_POST['second']);
+
 
          $prod1 = "http://api.remix.bestbuy.com/v1/products(sku={$winner_skus[0]})?show=name,salePrice,largeImage,url&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
          $prod2 = "http://api.remix.bestbuy.com/v1/products(sku={$winner_skus[1]})?show=name,salePrice,largeImage,url&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
          $prod3 = "http://api.remix.bestbuy.com/v1/products(sku={$winner_skus[2]})?show=name,salePrice,largeImage,url&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
-         $prod4 = "http://api.remix.bestbuy.com/v1/products(sku={$winner_skus[3]})?show=name,salePrice,largeImage,url&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
-         $prod5 = "http://api.remix.bestbuy.com/v1/products(sku={$winner_skus[4]})?show=name,salePrice,largeImage,url&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
+         $prod4 = "http://api.remix.bestbuy.com/v1/products(sku={$second})?show=name,salePrice,largeImage,url&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
+         $prod5 = "http://api.remix.bestbuy.com/v1/products(sku={$winner})?show=name,salePrice,largeImage,url&format=json&apiKey={$GLOBALS['BESTBUYKEY']}";
          $prod1 = json_decode(file_get_contents($prod1));
          $prod2 = json_decode(file_get_contents($prod2));
          $prod3 = json_decode(file_get_contents($prod3));

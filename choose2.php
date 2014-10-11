@@ -27,16 +27,8 @@
 		$elements = reinitialize($queue, htmlspecialchars($_POST['id']));
 		$loser = htmlspecialchars($_POST['loser']);
 		$prods = getProds($elements); 
-		if(($mqueue->count()) <= 5){
+		if(($mqueue->count()) < 4){
 			$topResults->enqueue($loser);
-		}
-		if(($mqueue->count()) <= 1){
-			//<5 keep track, one left, know what that is, send top five to top results
-			$winner = $prods[0]; //should already be in the queue. Might want to reverse the queue
-			$topResults->enqueue($elements[0]);
-
-		//	header('Location: topResults.php');
-			//need to send winner and top five to topresults.php
 		}
 		$serialQueue = urlencode(serialize($mqueue));
 		$serialTop = urlencode(serialize($topResults));
@@ -64,7 +56,7 @@
 	<div id="container" class="text-center">
 	  <h1>Which do you prefer?</h1>	  
 		<div class="col-sm-5 col-md-5 vertical-top">
-			<h3><?php echo $prods[0]->{"name"}; ?></h3>
+			<h3><?php echo $prods[0]->{"name"}?></h3>
 			<div class="panel panel-default">
 			  <div class="panel-body">
 		    	<img class="product" src="<?php echo $prods[0]->{"largeImage"} ?>"/>
@@ -87,35 +79,39 @@
 			  </div>
 			</div>
 	  </div>
-<?php if($mqueue->count() > 1): ?>
-		<div class="col-sm-2 col-md-2 col-equal-height vertical-center">
-                <form class="form-inline" method="post" action="choose2.php">
-                        <input type="hidden" name="id" value="<?php echo $elements[0]; ?>"/>
-                        <input type="hidden" name="loser" value="<?php echo $elements[1]; ?>"/>
-                        <input type="hidden" name="queue" value="<?php echo $serialQueue; ?>"/>
-                        <input type="hidden" name="top" value="<?php echo $serialTop; ?>"/>
-                        <input type="image" src="img/thisOneFinal.png" class="cherry-arrow cherry-arrow-left btTxt " />
-                </form>
-                <form class="form-inline" method="post" action="choose2.php">
-                        <input type="hidden" name="id" value="<?php echo $elements[1]; ?>"/>
-                        <input type="hidden" name="loser" value="<?php echo $elements[0]; ?>"/>
-                        <input type="hidden" name="queue" value="<?php echo $serialQueue; ?>"/>
-                        <input type="hidden" name="top" value="<?php echo $serialTop; ?>"/>
-                        <input type="image" src="img/thatOneFinal.png" class="cherry-arrow cherry-arrow-right btTxt " />
-                </form>
-                </div>
-<?php else : ?>
-		<div class="col-sm-2 col-md-2 col-equal-height vertical-center">
-                <form class="form-inline" method="post" action="topResults.php">
-                        <input type="hidden" name="top" value="<?php echo $serialTop; ?>"/>
-                        <input type="image" src="img/thisOneFinal.png" class="cherry-arrow cherry-arrow-left btTxt " />
-                </form>
-                <form class="form-inline" method="post" action="topResults.php">
-                        <input type="hidden" name="top" value="<?php echo $serialTop; ?>"/>
-                        <input type="image" src="img/thatOneFinal.png" class="cherry-arrow cherry-arrow-right btTxt " />
-                </form>
-                </div>
-<?php endif; ?>
+		<?php if($mqueue->count() > 1): ?>
+				<div class="col-sm-2 col-md-2 col-equal-height vertical-center">
+					<form class="form-inline" method="post" action="choose2.php">
+						<input type="hidden" name="id" value="<?php echo $elements[0]; ?>"/>
+						<input type="hidden" name="loser" value="<?php echo $elements[1]; ?>"/>
+						<input type="hidden" name="queue" value="<?php echo $serialQueue; ?>"/>
+						<input type="hidden" name="top" value="<?php echo $serialTop; ?>"/>
+						<input type="image" src="img/thisOneFinal.png" class="cherry-arrow cherry-arrow-left btTxt " />
+					</form>
+					<form class="form-inline" method="post" action="choose2.php">
+						<input type="hidden" name="id" value="<?php echo $elements[1]; ?>"/>
+						<input type="hidden" name="loser" value="<?php echo $elements[0]; ?>"/>
+						<input type="hidden" name="queue" value="<?php echo $serialQueue; ?>"/>
+						<input type="hidden" name="top" value="<?php echo $serialTop; ?>"/>
+						<input type="image" src="img/thatOneFinal.png" class="cherry-arrow cherry-arrow-right btTxt " />
+					</form>
+				</div>
+		<?php else : ?>
+				<div class="col-sm-2 col-md-2 col-equal-height vertical-center">
+			    <form class="form-inline" method="post" action="topResults.php">
+						<input type="hidden" name="winner" value="<?php echo $elements[0]; ?>"/>
+						<input type="hidden" name="second" value="<?php echo $elements[1]; ?>"/>
+		        <input type="hidden" name="top" value="<?php echo $serialTop; ?>"/>
+		        <input type="image" src="img/thisOneFinal.png" class="cherry-arrow cherry-arrow-left btTxt " />
+			    </form>
+			    <form class="form-inline" method="post" action="topResults.php">
+		        <input type="hidden" name="winner" value="<?php echo $elements[1]; ?>"/>
+		        <input type="hidden" name="second" value="<?php echo $elements[0]; ?>"/>
+		        <input type="hidden" name="top" value="<?php echo $serialTop; ?>"/>
+		        <input type="image" src="img/thatOneFinal.png" class="cherry-arrow cherry-arrow-right btTxt " />
+			    </form>
+		    </div>
+		<?php endif; ?>
 
 		<div class="col-sm-5 col-md-5 vertical-top">	 
 			<h3><?php echo $prods[1]->{"name"}; ?></h3>
